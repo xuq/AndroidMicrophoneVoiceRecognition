@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/tv_mic_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Lettura Mic" />
+
+    <RelativeLayout
+        android:id="@+id/rl_mic_values"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_mic_label"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/tv_threshold_rms_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RMS LIMIT (in DB):" />
+
+        <TextView
+            android:id="@+id/tv_threshold_rms_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/tv_threshold_rms_label"
+            android:text="rms limit" />
+
+        <TextView
+            android:id="@+id/tv_rms_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_threshold_rms_label"
+            android:text="RMS (in DB):" />
+
+        <TextView
+            android:id="@+id/tv_rms_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_rms_label"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/tv_rms_label"
+            android:text="rms value" />
+
+        <TextView
+            android:id="@+id/tv_audio_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_rms_label"
+            android:text="RESULT:" />
+
+        <TextView
+            android:id="@+id/tv_audio_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_audio_label"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/tv_audio_label"
+            android:text="value" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_mic_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_mic_values"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="start"
+            android:text="Start" />
+
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="stop"
+            android:text="Stop" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_voice_recogniton_border_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_mic_buttons"
+        android:layout_marginTop="20dp"
+        android:text="Voice Recognition" />
+
+    <RelativeLayout
+        android:id="@+id/rl_voice_recognition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_voice_recogniton_border_label"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/tv_voice_recognition_main_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FIRST RESULT: " />
+
+        <TextView
+            android:id="@+id/tv_voice_recognition_main_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_voice_recognition_main_label"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/tv_voice_recognition_main_label"
+            android:text="value" />
+
+       <TextView
+            android:id="@+id/tv_voice_recognition_other_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           	android:layout_below="@+id/tv_voice_recognition_main_label"
+            android:text="HINTS: " />
+
+        <TextView
+            android:id="@+id/tv_voice_recognition_other_values"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_voice_recognition_other_label"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/tv_voice_recognition_other_label"
+            android:text="value" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/voice_recognition_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_voice_recognition"
+        android:layout_marginTop="10dp"
+        android:onClick="startVoiceRecognition"
+        android:text="Start Voice Recognition" />
+
+</RelativeLayout>
